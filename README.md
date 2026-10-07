@@ -59,7 +59,7 @@ injection, WMI, работа с named pipes).
 Локальный **fake-сервер активации** на Flask. Что делает:
 - слушает порт 80 (или 8000) и принимает SOAP-запросы от adrive;
 - на `CheckForUpdate` отвечает пустым `<CheckForUpdateResult/>`;
-- на `Activate` с нужными `snd`/`unc` возвращает лицензионный ключ
+- на `Activate` с нужным `unc` возвращает лицензионный ключ
   в теге `<a:Code>`;
 - на всё остальное отдаёт SOAP Fault.
 
@@ -100,4 +100,4 @@ injection, WMI, работа с named pipes).
    
 3. Если это первый запуск запустите `flask-server.py` или готовый `flask-server.exe` из Releases.
 4. Запустить `main.exe`.
-5. Запустить `PDDTests.exe`, ввести ключ активации `2601-2988-6197` — активация пройдёт офлайн.
+5. Запустить `PDDTests.exe` — активация пройдёт офлайн.

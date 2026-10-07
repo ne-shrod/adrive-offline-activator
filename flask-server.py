@@ -1,4 +1,5 @@
 from flask import Flask, request, Response
+
 app = Flask(__name__)
 
 cr = (
@@ -19,6 +20,7 @@ ar = (
     '<ActivateResult xmlns:a="http://schemas.datacontract.org/2004/07/" '
     'xmlns:i="http://www.w3.org/2001/XMLSchema-instance">'
     '<a:Code>552E-6FEF-A149-A244-A7F4-23F0-4D40-E039-54B3-6B51-5224-E04A-6794-C04F-7D03-1071-05AC-CAA3-FD4C-2757</a:Code>'
+    '<a:Error/>'
     '</ActivateResult>'
     '</ActivateResponse>'
     '</s:Body>'
@@ -46,7 +48,7 @@ def service():
     sa = request.headers.get('SOAPAction', '')
 
     if 'Activate' in sa:
-        if "2601-2988-6197" in body and "50-02-01-13-62-67-59-86" in body:
+        if "50-02-01-13-62-67-59-86" in body:
             return Response(
                 ar,
                 status=200,
